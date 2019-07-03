@@ -18,11 +18,13 @@ The NN5 time series data may reflect multiple overlying seasonality like weekly,
 ## Forecast evaluation
 We evaluate the forecasts across a range of error metrics. We use scale dependent errors like MSE (Mean Squared Error), scale independent errors like MAPE (Mean Absolute Percentage Error) , Symmetric Mean Absolute Error (sMAPE) and relative errors like MASE (Mean Absolute Scaled Error) for comparing forecast across range of models. Both static and rolling origin forecasts are used.
 
-```{r}
+```{r, message=FALSE, warning=FALSE}
 #install.packages("webshot")
-#webshot::install_phantomjs()
+#webshot::install_phantomjs() for getting html inot github_documents
 set.seed(1234)
 # load libraries
+library(webshot) # for getting html inot github_documents
+
 library(forecast)
 library(tseries)
 library(tsutils)
