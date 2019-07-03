@@ -1,0 +1,53 @@
+---
+title: "Backtesting Forecasts across various models"
+author: 'Mansoor'
+output: github_document
+---
+We use TSstudio package to perform backtesting of NN5 32 series across a range of model namely auto.arima, HoltWinters, exponential smoothing, Neural network (nnetar), TBATS, BSTS (Bayesian structural time series) and hybrid.
+
+```{r setup, include=FALSE, message=FALSE, warning=FALSE, tidy=TRUE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r,message=FALSE, warning=FALSE}
+set.seed(1234)
+library(TSstudio)
+```
+
+```{r}
+library(imputeTS)
+NN5_32<-read.csv("NN5_32_NA.csv", header=F,na.strings=("NA"))
+NN5_32<-na.locf(NN5_32, option = "locf")
+#NN5_32
+# Create the training set
+train_NN5_32 <- ts(NN5_32[1:721,],frequency=7) # converting into time series as well
+#train_NN5_32
+# Create the test set
+test_NN5_32 <- ts(NN5_32[722:735,],frequency=7, start = c(104,1))
+#test_NN5_32
+NN5_32<-ts(NN5_32, frequency = 7)
+```
+
+```{r}
+NN5_32_backtesting <- ts_backtesting(NN5_32, 
+                                     models = "abehntw", 
+                                     periods = 6, 
+                                     error = "sMAPE", 
+                                     window_size = 7, 
+                                     h = 14)
+
+#NN5_32_backtesting
+#NN5_32_backtesting$MAPE_score
+#NN5_32_backtesting$leaderboard
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
