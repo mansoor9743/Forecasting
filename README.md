@@ -862,3 +862,5 @@ fit1fullForecast_
 ## Backtesting forecasts across different models
 We use TSstudio package to perform backtesting of NN5 32 series across a range of model namely auto.arima, HoltWinters, exponential smoothing, Neural network (nnetar), TBATS, BSTS (Bayesian structural time series) and hybrid.
 
+![](backtesting_32.png)
+
