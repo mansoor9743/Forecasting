@@ -857,4 +857,8 @@ MASE(test_NN5_32[,"with"],fitfullForecast,3) #0.835
 fit1fullForecast_ <- predict(fit1, test_NN5_32,
                              interval="prediction", level=0.95)
 fit1fullForecast_
+
 ```
+## Backtesting forecasts across different models
+We use TSstudio package to perform backtesting of NN5 32 series across a range of model namely auto.arima, HoltWinters, exponential smoothing, Neural network (nnetar), TBATS, BSTS (Bayesian structural time series) and hybrid.
+
