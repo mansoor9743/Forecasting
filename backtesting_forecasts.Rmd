@@ -30,12 +30,12 @@ NN5_32<-ts(NN5_32, frequency = 7)
 ```
 
 ```{r}
-NN5_32_backtesting <- ts_backtesting(NN5_32, 
-                                     models = "behntw", 
-                                     periods = 6, 
-                                     error = "sMAPE", 
-                                     window_size = 7, 
-                                     h = 14)
+#NN5_32_backtesting <- ts_backtesting(NN5_32, 
+                                  #   models = "behntw", 
+                                   #  periods = 6, 
+                                   #  error = "sMAPE", 
+                                  #   window_size = 7, 
+                                   #  h = 14)
 
 #NN5_32_backtesting
 #NN5_32_backtesting$MAPE_score
